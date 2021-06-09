@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -20,7 +21,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/title_text_view"
@@ -33,7 +34,7 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@id/author_avatar_image_view"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Soy un titulo" />
+            tools:text="Soy un titulo"/>
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/author_text_view"
@@ -45,7 +46,7 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="@id/title_text_view"
             app:layout_constraintTop_toBottomOf="@+id/title_text_view"
-            tools:text="Soy un titulo" />
+            tools:text="Soy un titulo"/>
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/image_view"
@@ -53,12 +54,27 @@
             android:layout_height="0dp"
             android:layout_margin="8dp"
             android:scaleType="fitCenter"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/btn"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/author_avatar_image_view" />
+            app:layout_constraintTop_toBottomOf="@+id/author_avatar_image_view"/>
 
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btn"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/ic_baseline_keyboard_arrow_down_24"
+            android:tint="@color/black"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image_view"
+            tools:visibility="visible"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>

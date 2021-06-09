@@ -51,11 +51,15 @@ class GalleryRepositoryImpl(
             val imageLink = image.images?.first()?.link ?: image.link
             imageLink.contains(".jpg") || imageLink.contains(".png")
         }.mapNotNull { image ->
-            val imageLink = image.images?.first()?.link ?: image.link
+//            val imageLink = image.images?.first()?.link ?: image.link
+            val imageLinks = mutableListOf<String>()
+            image.images?.forEach {
+                imageLinks.add(it.link)
+            }
             Image(
                 id = image.id,
                 title = image.title,
-                url = imageLink,
+                urls = imageLinks,
                 likes = image.favorite_count ?: 0,
                 datetime = image.datetime,
                 author = image.account_url
@@ -70,7 +74,7 @@ class GalleryRepositoryImpl(
             Image(
                 id = roomImage.id,
                 title = roomImage.title,
-                url = roomImage.url,
+                urls = listOf(roomImage.url),
                 likes = roomImage.likes,
                 datetime = roomImage.datetime,
                 author = roomImage.author
@@ -83,7 +87,7 @@ class GalleryRepositoryImpl(
             RoomImage(
                 id = image.id,
                 title = image.title,
-                url = image.url,
+                url = image.urls[0],
                 likes = image.likes,
                 datetime = image.datetime,
                 author = image.author,

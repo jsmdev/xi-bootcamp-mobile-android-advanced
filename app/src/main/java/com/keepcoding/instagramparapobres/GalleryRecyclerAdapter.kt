@@ -1,10 +1,12 @@
 package com.keepcoding.instagramparapobres
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.keepcoding.instagramparapobres.databinding.GalleryItemBinding
+import com.keepcoding.instagramparapobres.detail.DetailActivity
 import com.keepcoding.instagramparapobres.gallery.Image
 
 class GalleryRecyclerAdapter : RecyclerView.Adapter<GalleryViewHolder>() {
@@ -35,10 +37,26 @@ data class GalleryViewHolder(val binding: GalleryItemBinding) : RecyclerView.Vie
             authorTextView.text = image.author ?: "Unknown"
             imageView.setImageBitmap(null)
             authorAvatarImageView.setImageBitmap(null)
-            Glide.with(root).load(image.url).into(imageView)
-            Glide.with(root).load(image.authorAvatar).also {
-                it.circleCrop()
-            }.into(authorAvatarImageView)
+            val urls = image.urls
+            if (urls.size > 1) {
+                btn.visibility = View.VISIBLE
+                btn.setOnClickListener {
+                    val context = btn.context
+                    DetailActivity.start(
+                        context,
+                        urls
+                    )
+                }
+            }
+            Glide.with(root)
+                .load(urls[0])
+                .into(imageView)
+            Glide.with(root)
+                .load(image.authorAvatar)
+                .also {
+                    it.circleCrop()
+                }
+                .into(authorAvatarImageView)
         }
     }
 }

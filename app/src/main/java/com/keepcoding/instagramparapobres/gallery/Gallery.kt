@@ -5,7 +5,7 @@ data class Gallery(val images: List<Image>)
 data class Image(
     val id: String,
     val title: String?,
-    val url: String,
+    val urls: List<String>,
     val likes: Int,
     val datetime: Long,
     val author: String?
