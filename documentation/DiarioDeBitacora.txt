@@ -1,0 +1,35 @@
+1:
+
+- ViewBinding
+
+- Recycler
+	- Grid layout
+		- SpamCount
+		- Item matchparent
+	-Recyclerview adapter
+		- Debug id and pos
+
+Network request:
+	- okhttp3
+	- Corroutinas con scope en Adapter
+
+Api Gallery Call:
+	- Añadido modelo del JSON por postman
+	- Creado ImgurApi
+	- Añadir Timber para mostrar todo el log
+	- añadir KAPT
+	- Body solo se puede leer una vez
+	- Filtrar solo .jpg
+Como llamar a otra cosa distinta de hot?
+ - ViwModel -> dependencias
+
+Oauth:
+	- Client ID: 3795c60af5383c1
+	- Client secret: 26635d034e1160c04c8edc5b5f7a4d1bc58eddbe 
+	- https://api.imgur.com/oauth2/authorize?client_id=3795c60af5383c1&response_type=token
+=fdbYt&4dVZ2?id
+
+- Image url : https://static2.abc.es/media/play/2020/11/13/baby-yoda-kdIH--620x349@abc.jpg
+o182vy3lb1i2j
+
+ssh-keygen -t rsa -b 4096 -C "daniel.ceinos@gmail.com"

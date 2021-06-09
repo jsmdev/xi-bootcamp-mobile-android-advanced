@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_hot"
+        android:icon="@drawable/ic_hot"
+        android:iconTint="#3B3B3B"
+        android:title="Hot" />
+    <item
+        android:id="@+id/menu_top"
+        android:icon="@drawable/ic_top"
+        android:iconTint="#3B3B3B"
+        android:title="Top" />
+
+    <item
+        android:title="My Images"
+        android:id="@+id/menu_me"/>
+
+    <item
+        android:title="Login"
+        android:id="@+id/menu_login"/>
+</menu>
